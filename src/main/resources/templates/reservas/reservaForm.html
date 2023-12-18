@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="./Assets/duffle.svg" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/global.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/listarUsuario.css}" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>Cadastro de Reserva</title>
+</head>
+
+<body>
+
+	<!--Início da navbar-->
+	<header>
+		<nav class="navbar navbar-expand-lg text-white border-left p-2"
+			style="background:linear-gradient(90deg, #de6060 20%, #ab0f0f 100%);">
+			<a class="navbar-brand text-white p-2 pt-2" th:href=" @{/}">
+				<!-- <img src="" alt="logo" width="45" height="40" class="d-inline-block align-text-top">-->
+				- SuperViagem -
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item ">
+						<a class="nav-link text-white p-3" th:href="@{/login}">Login</a>
+					</li>
+					<li class="nav-items">
+						<a class="nav-link active text-white p-3" th:href="@{/usuarios}">Cadastro</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white p-3" th:href="@{/viagens}">Destinos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white p-3" th:href="@{/reservas}">Reservas</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white p-3" th:href="@{/promocoes}">Promoções</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white p-3" th:href="@{/contato}">Contato</a>
+					</li>
+				</ul>
+			</div>
+
+		</nav>
+	</header>
+	<!--Fim da navbar-->
+
+
+	<div class="content container mt-3">
+		<h2 style="text-align: center;padding-top: 90px;font-weight: normal; color: #b39363;">Cadastro de Reservas</h2>
+		<form th:action="@{/reservas/save}" th:object="${reserva}" method="post">
+
+			<div class="form-group">
+				<label for="checkin" style="color: #d2b48c;">Check-in:</label>
+				<input type="date" id="checkin" class="form-control" th:field="*{checkin}" />
+			</div>
+
+			<div class="form-group">
+				<label for="checkout" style="color: #d2b48c;">Check-out:</label>
+				<input type="date" id="checkout" class="form-control" th:field="*{checkout}" />
+			</div>
+
+			<div class="form-group">
+				<label for="usuario.id" style="color: #d2b48c;">Id usuário:</label>
+				<input type="number" id="usuario.id" class="form-control" th:field="*{usuario.id}" />
+			</div>
+
+			<div class="form-group">
+				<label for="viagem.id_viagem" style="color: #d2b48c;">Id viagem:</label>
+				<input type="number" id="viagem.id_viagem" class="form-control" th:field="*{viagem.id_viagem}" />
+			</div>
+
+
+			<button type="submit" class="botaoc btn btn-primary">Cadastrar Reserva</button>
+		</form>
+	</div>
+	<!--Início do footer-->
+	<footer class="footer pt-3">
+		<p class="text-center">&copy; 2023 SuperViagem. Todos os direitos reservados.</p>
+	</footer>
+	<!--Fim do footer-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>

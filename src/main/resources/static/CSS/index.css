@@ -1,0 +1,31 @@
+/*INFORMAÇÕES*/
+
+.imginfo{
+    margin-left: 5px;
+}
+
+.textoinfo{
+    text-align: justify;
+    color: #b39363;
+}
+
+.infos{
+    margin-right: 0cm ;
+}
+.info{
+    color: #ab0f0f;
+}
+
+/*DEPOIMENTOS*/
+
+.perfil{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.depo{
+    color: #de6060;
+    padding-top: 10px;
+    padding-left: 1cm;
+}

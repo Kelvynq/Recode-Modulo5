@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="./Assets/duffle.svg" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/global.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/listaViagem.css}" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>Atualizar Viagem</title>
+</head>
+
+<body>
+	<!--Início da navbar-->
+	<header>
+		<nav class="navbar navbar-expand-lg text-white border-left p-2"
+			style="background:linear-gradient(90deg, #de6060 20%, #ab0f0f 100%);">
+			<a class="navbar-brand text-white p-2 pt-2" th:href=" @{/}">
+				<!-- <img src="" alt="logo" width="45" height="40" class="d-inline-block align-text-top">-->
+				- SuperViagem -
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item ">
+						<a class="nav-link text-white p-3" th:href="@{/login}">Login</a>
+					</li>
+					<li class="nav-items">
+						<a class="nav-link active text-white p-3" th:href="@{/usuarios}">Cadastro</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white p-3" th:href="@{/viagens}">Destinos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white p-3" th:href="@{/reservas}">Reservas</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white p-3" th:href="@{/promocoes}">Promoções</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white p-3" th:href="@{/contato}">Contato</a>
+					</li>
+				</ul>
+			</div>
+
+		</nav>
+	</header>
+	<!--Fim da navbar-->
+
+
+	<div class="content container mt-3">
+		<h2 style="text-align: center;padding-top: 90px;font-weight: normal; color: #b39363;">Atualizar Viagem</h2>
+		<form th:action="@{/viagens/editar/{id_viagem}(id_viagem=${viagem.id_viagem})}" th:object="${viagem}"
+			method="post">
+
+			<div class="col-md-12 pb-3" style="color: #d2b48c;">
+				<label for="cidade" class="form-label">Cidade:</label>
+				<input type="text" id="cidade" class="form-control" th:field="*{cidade}" />
+			</div>
+			<div class="col-md-12 pb-3" style="color: #d2b48c;">
+				<label for="estado" class="form-label">Estado:</label>
+				<input type="text" id="estado" class="form-control" th:field="*{estado}" />
+			</div>
+			<div class="col-md-12 pb-3" style="color: #d2b48c;">
+				<label for="img" class="form-label">URL da Imagem:</label>
+				<input type="text" id="img" class="form-control" th:field="*{img}" />
+			</div>
+			<div class="col-md-12 pb-3" style="color: #d2b48c;">
+				<label for="valor" class="form-label">Valor:</label>
+				<input type="number" id="valor" class="form-control" th:field="*{valor}" />
+			</div>
+			<div class="col-md-12 pb-3" style="color: #d2b48c;">
+				<label for="descricao" class="form-label">Descrição:</label>
+				<input type="text" id="descricao" class="form-control" th:field="*{descricao}" />
+			</div>
+			<div class="col-md-12 pb-3">
+				<button type="submit" class="botaoe mt-3 btn btn-primary">Atualizar</button>
+			</div>
+		</form>
+	</div>
+
+	<footer class="footer pt-3">
+		<p class="text-center">&copy; Squad 21 - Recode Pro 2023</p>
+	</footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+	crossorigin="anonymous"></script>
+<script>
+</body >
+
+</html >
